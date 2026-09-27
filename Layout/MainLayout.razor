@@ -1,7 +1,7 @@
 @inherits LayoutComponentBase
 
 <MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
-<MudPopoverProvider />
+<MudPopoverProvider />	
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -16,7 +16,13 @@
         </MudLink>
     </MudAppBar>
 
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer @bind-Open="_drawerOpen" Width=280px Elevation="0" ClipMode="DrawerClipMode.Never" Variant="DrawerVariant.Responsive">
+		<MudDrawerHeader Class="align-center py-6">
+			<MudStack Row="true" AlignItems="AlignItems.Center" spacing="2">
+				<MudIcon Icon="@Icons.Material.Outlined.ChangeHistory" Color="Color.Error" Size="Size.Large" />
+				<MudText Typo="Typo.h5"> Afya Pedagógico</MudText>
+			</MudStack>
+		</MudDrawerHeader>
         <NavMenu />
     </MudDrawer>
 
@@ -36,9 +42,10 @@
 
         _theme = new()
         {
-            PaletteLight = _lightPalette,
-            PaletteDark = _darkPalette,
-            LayoutProperties = new LayoutProperties()
+            PaletteLight = new PaletteLight { /* cores do modo claro */ },
+			PaletteDark = new PaletteDark { /* cores do modo escuro */ },
+			LayoutProperties = new LayoutProperties { /* medidas do layout */ },
+			Typography = new Typography { /* fontes e tamanhos */ },
         };
     }
 
@@ -96,4 +103,5 @@
         true => Icons.Material.Rounded.AutoMode,
         false => Icons.Material.Outlined.DarkMode,
     };
+	
 }
