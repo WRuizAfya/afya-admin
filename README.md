@@ -73,13 +73,28 @@ Mostre a árvore de pastas e arquivos e explique em uma linha o papel de cada pa
 Responda **com suas próprias palavras** (um parágrafo curto por pergunta):
 
 1. Como uma aplicação Blazor WebAssembly inicia no navegador? Qual é o papel do `index.html`, da `<div id="app">` e do `Program.cs`?
+	O navegador abre o index.html, que carrega o blazor.webassembly.js para baixar o .NET e executar o Program.cs, onde o Program.cs substitui o indicador de carregamento da <div id="app"> pela aplicação Blazor.
+
 2. Qual é a diferença entre um **Layout**, uma **Page** e um **Component** neste projeto? Dê um exemplo de cada.
+	Layout é a moldura com menu/topo fixa no site (ex: MainLayout.razor), Page é uma tela ligada a uma URL (ex: Dashboard.razor) e Component é um bloco visual reutilizável de interface (ex: KpiCard.razor).
+
 3. O que é um `RenderFragment` e como o `DashboardCard` usa esse recurso para ser reutilizado por vários cards?
+	O RenderFragment é um parâmetro que aceita marcações HTML ou outros componentes, permitindo ao DashboardCard fornecer a estrutura base do card enquanto recebe conteúdos personalizados para cada utilização.
+
 4. Como funciona o `@bind-Valor` no `SeletorPeriodo`? Qual é o papel do `ValorChanged`?
+	O @bind-Valor sincroniza o valor selecionado bidirecionalmente entre o componente e a página pai, enquanto o ValorChanged é o evento disparado para avisar o pai que uma nova opção foi escolhida.
+
 5. Por que os dados ficam na pasta `Data`, separados dos componentes? Que vantagem isso traz se, no futuro, os dados vierem de uma API?
+	A pasta Data separa a lógica dos dados da interface visual, permitindo que uma futura integração com API altere apenas essa camada de dados sem precisar de modificar a estrutura dos componentes de tela.
+
 6. Como o `MudGrid` com `xs`, `sm` e `lg` faz os cards de KPI se reorganizarem em telas de tamanhos diferentes?
+	O MudGrid divide a interface em 12 colunas, fazendo com que o card ocupe 12 colunas no telemóvel (xs="12" — 1 por linha), 6 no tablet (sm="6" — 2 por linha) e 3 no PC (lg="3" — 4 por linha).
+
 7. Como foi possível estilizar a página inteira sem escrever CSS? Explique o papel do tema (`MudTheme`) e das classes utilitárias.
+	A estilização é gerida pelo MudTheme, que define cores, tipografia e bordas globais via C#, e pelas classes utilitárias do MudBlazor aplicadas no código HTML (como pa-4 e d-flex) para alinhamento e margens.
+
 8. Por que o namespace do projeto é `afya_admin` e não `afya-admin`?
+	O hífen é um operador de subtração no C# e não pode ser usado em identificadores, por isso o .NET converte automaticamente afya-admin para o namespace válido afya_admin.
 
 ## Dificuldades e soluções
 
