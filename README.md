@@ -73,7 +73,7 @@ Mostre a árvore de pastas e arquivos e explique em uma linha o papel de cada pa
 Responda **com suas próprias palavras** (um parágrafo curto por pergunta):
 
 1. Como uma aplicação Blazor WebAssembly inicia no navegador? Qual é o papel do `index.html`, da `<div id="app">` e do `Program.cs`?
-	O navegador abre o index.html, que carrega o blazor.webassembly.js para baixar o .NET e executar o Program.cs, onde o Program.cs substitui o indicador de carregamento da <div id="app"> pela aplicação Blazor.
+	O navegador abre o index.html, que carrega o blazor.webassembly.js para baixar o .NET e executar o Program.cs, onde o Program.cs substitui o indicador de carregamento da `<div id="app">` pela aplicação Blazor.
 
 2. Qual é a diferença entre um **Layout**, uma **Page** e um **Component** neste projeto? Dê um exemplo de cada.
 	Layout é a moldura com menu/topo fixa no site (ex: MainLayout.razor), Page é uma tela ligada a uma URL (ex: Dashboard.razor) e Component é um bloco visual reutilizável de interface (ex: KpiCard.razor).
