@@ -19,10 +19,10 @@
 		<MudSpacer />
 		
 		<MudStack Row="true" Spacing="1" AlignItems="AlignItems.Center">
-			<!-- Tema,Notificações,Divisor e usuário(a seguir) -->
+			<MudIconButton Icon="@DarkLightModeButtonIcon" Color="Color.Inherit" OnClick="@DarkModeToggle" />
+			
 			<MudMenu AnchorOrigin="Origin.BottomRight" TransformOring="Origin.TopRight">
 				<ActivatorContent>
-					@* *@
 					<div class="d-flex pa-3 cursor-pointer">
 						<MudBadge Content="@_notificacoes.Count" Color="Color.Error">
 							<MudIcon Icon="@Icons.Material.Outlined.Notifications" Size="Size.Medium"/>
@@ -55,8 +55,9 @@
 								<MudText Typo="Typo.subtitle2">Alex Morgan</MudText>
 								<MudChip T="string" Size="Size.Small" Color="Color.Success" Variant="Variant.Text" Class="ma-0">Online</MudChip>
 							</MudStack>
-							<MudIcon Icon="@Icons.Material.Filled.KeyboardArrowDown" Size="Size.Small" />
+							<MudText Typo="Typo.caption" Class="mud-text-secondary">alex.morgan@afya.com.br</MudText>
 						</MudStack>
+						<MudIcon Icon="@Icons.Material.Filled.KeyboardArrowDown" Size="Size.Small" />						
 					</MudStack>
 				</ActivatorContent>
 				<ChildContent>
