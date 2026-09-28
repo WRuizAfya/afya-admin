@@ -1,6 +1,6 @@
 <DashboardCard Titulo="Projetos Recentes">
 	<Acoes>
-		<MudButton Href="projetos" Variant="Variant.Text" Color="Color.Primary" EndIcon="@Icons.Material.Filled.ArrowForward">Ver todos</MudButto
+		<MudButton Href="projetos" Variant="Variant.Text" Color="Color.Primary" EndIcon="@Icons.Material.Filled.ArrowForward">Ver todos</MudButton>
 	</Acoes>
 	<ChildContent>
 		<MudTable Items="Projetos" Dense="true" Hover="true" Elevation="0" Breakpoint="Breakpoint.Sm" HeaderClass="mud-background-gray">
@@ -35,7 +35,7 @@
 				<MudTd DataLabel="Progresso">
 					<MudGrid Spacing="1" Class="align-center">
 						<MudItem xs="9">
-							<MudProgressLinear Value="@context.Progresso" Color="@(context.Progresso == 100 ? Color.Success : Color.Primary)" Rou
+							<MudProgressLinear Value="@context.Progresso" Color="@(context.Progresso == 100 ? Color.Success : Color.Primary)" Rounded="true"/>
 						</MudItem>
 						<MudItem xs="3">
 							<MudText Typo="Typo.body2">@context.Progresso%</MudText>

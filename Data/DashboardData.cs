@@ -10,7 +10,7 @@ public record ProjetoPerformance(string Nome, string Icone, Color Cor, int Perce
 
 public record Atividade(string Nome, string Acao, string Tempo, string Icone, Color Cor);
 
-public record ProjetoREcente(string Nome, string Icone, Color Cor, string Cliente, string Responsavel, string Status, Color StatusCor, int Progresso, string Prazo);
+public record ProjetoRecente(string Nome, string Icone, Color Cor, string Cliente, string Responsavel, string Status, Color StatusCor, int Progresso, string Prazo);
 
 public static class DashboardData
 {
@@ -56,9 +56,9 @@ public static class DashboardData
 
 		public static readonly List<ProjetoRecente> ProjetosRecentes = new()
 		{
-			new("Portal Institucional", Icons.Material.Outlined.DesktopWindows, Color.Primary, "TechCorp", "Mariana Souza", "Em andamento", Color.Inf
-			new("Aplicativo Mobile", Icons.Material.Outlined.PhoneIphone, Color.Secondary, "Nova Digital", "Carlos Lima", "Em revisão", Color.Warning
-			new("Migração Cloud", Icons.Material.Outlined.Cloud, Color.Success, "CloudSystems", "Ana Martins", "Concluído", Color.Success, 100, "20 S
+			new("Portal Institucional", Icons.Material.Outlined.DesktopWindows, Color.Primary, "TechCorp", "Mariana Souza", "Em andamento", Color.Info, 67, "31 Out"),
+			new("Aplicativo Mobile", Icons.Material.Outlined.PhoneIphone, Color.Secondary, "Nova Digital", "Carlos Lima", "Em revisão", Color.Warning, 50, "07 Nov"),
+			new("Migração Cloud", Icons.Material.Outlined.Cloud, Color.Success, "CloudSystems", "Ana Martins", "Concluído", Color.Success, 100, "20 Set"),
 			new("Sistema ERP", Icons.Material.Outlined.Storage, Color.Warning, "Alpha Group", "João Silva", "Em andamento", Color.Info, 48, "15 Out")
 		};
 }
