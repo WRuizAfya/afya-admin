@@ -100,6 +100,8 @@ Responda **com suas próprias palavras** (um parágrafo curto por pergunta):
 
 Descreva pelo menos **dois problemas** que você enfrentou durante o desenvolvimento e como resolveu cada um.
 
+1. Organização e Formatação de codigo devido ao programa que estava usando
+
 ## Melhorias futuras (opcional)
 
 O que você implementaria a seguir? Se fez algum dos desafios da seção 20 do tutorial, descreva aqui.
