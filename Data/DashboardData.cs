@@ -32,7 +32,7 @@ public static class DashboardData
 		
 		public static readonly List<SegmentoCliente> SegmentosClientes = new()
 		{
-			new("Empresas", 42, Color.Primary, "#2563EB"),
+			new("Empresas", 42, Color.Primary, "#de3162"),
 			new("Business", 31, Color.Secondary, "#7C3AED"),
 			new("Startup", 18, Color.Success, "#10B981"),
 			new("Outros", 9, Color.Warning, "#F97316"),
