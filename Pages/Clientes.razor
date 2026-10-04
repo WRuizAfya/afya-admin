@@ -1,0 +1,12 @@
+@page "/clientes"
+
+<CabecalhoPagina Titulo="Clientes" Subtitulo="Área de Gerenciamento de Clientes.">
+	<Acoes>
+		<SeletorPeriodo Opcoes="DashboardData.Periodos" @bind-Valor="_classificar" />
+		<MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" StartIcon="@Icons.Material.Filled.Add">Novo Cliente</MudButton>
+	</Acoes>
+</CabecalhoPagina>
+
+@code {
+	private string _classificar = "Ordem Alfabetica (Ascendente)";
+}
