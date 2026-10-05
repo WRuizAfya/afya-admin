@@ -1,9 +1,17 @@
 <MudStack Row="true" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Wrap="Wrap.Wrap" Class="mb-4 mt-4">
 	<div>
 		<MudText Typo="Typo.h4">@Titulo</MudText>
-		<MudText Typo="Typo.body1" Class="mud-text-secondary">@Subtitulo</MudText>
+		@if (!string.IsNullOrEmpty(Subtitulo))
+        {
+            <MudText Typo="Typo.body1" Class="mud-text-secondary">@Subtitulo</MudText>
+        }
 	</div>
 	<MudStack Row="true" Spacing="3" AlignItems="AlignItems.Center">
+		@if (ExibirSeletorPeriodo)
+		{
+			<SeletorPeriodo Opcoes="DashboardData.Periodos" Valor="@Periodo" ValorChanged="AtualizarPeriodo" />
+		}
+		
 		@Acoes
 	</MudStack>
 </MudStack>
@@ -12,4 +20,15 @@
 	[Parameter, EditorRequired] public string Titulo { get; set; } = "";
 	[Parameter] public string? Subtitulo { get; set; }
 	[Parameter] public RenderFragment? Acoes { get; set; }
+	
+	[Parameter] public bool ExibirSeletorPeriodo { get; set;} = true;
+	
+	[Parameter] public string Periodo { get; set; } = "Últimos 7 dias";
+	[Parameter] public EventCallback<string> PeriodoChanged { get; set; }
+	
+	private async Task AtualizarPeriodo(String novoPeriodo)
+	{
+		Periodo = novoPeriodo;
+		await PeriodoChanged.InvokeAsync(novoPeriodo);
+	}
 }

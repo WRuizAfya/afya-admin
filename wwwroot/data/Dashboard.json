@@ -1,0 +1,152 @@
+{
+  "periodos": [
+    "Últimos 7 dias",
+    "Últimos 30 dias",
+    "Últimos 90 dias",
+    "Personalizado"
+  ],
+  "kpisPorPeriodo": {
+    "Últimos 7 dias": [
+      {
+        "titulo": "Receita",
+        "valor": "R$ 82.833",
+        "variacao": "+4,1%",
+        "positivo": true,
+        "icone": "AttachMoney",
+        "corHex": "#10B981",
+        "tendencia": [3, 6, 5, 9, 8, 11, 9, 12, 11, 15]
+      },
+      {
+        "titulo": "Usuários Ativos",
+        "valor": "4.280",
+        "variacao": "+2,7%",
+        "positivo": true,
+        "icone": "Groups",
+        "corHex": "#7C3AED",
+        "tendencia": [2, 5, 6, 8, 7, 9, 8, 10, 9, 8]
+      },
+      {
+        "titulo": "Novos Clientes",
+        "valor": "128",
+        "variacao": "+5,53%",
+        "positivo": true,
+        "icone": "PeopleAlt",
+        "corHex": "#3B82F6",
+        "tendencia": [2, 3, 4, 6, 7, 7, 8, 8, 9, 9]
+      },
+      {
+        "titulo": "Projetos Ativos",
+        "valor": "9",
+        "variacao": "-0,8%",
+        "positivo": false,
+        "icone": "Folder",
+        "corHex": "#F97316",
+        "tendencia": [6, 7, 9, 8, 9, 8, 9, 7, 8, 7]
+      }
+    ],
+    "Últimos 30 dias": [
+      {
+        "titulo": "Receita",
+        "valor": "R$ 248.500",
+        "variacao": "+12,5%",
+        "positivo": true,
+        "icone": "AttachMoney",
+        "corHex": "#10B981",
+        "tendencia": [10, 14, 12, 18, 16, 21, 19, 24, 23, 29]
+      },
+      {
+        "titulo": "Usuários Ativos",
+        "valor": "12.842",
+        "variacao": "+8,2%",
+        "positivo": true,
+        "icone": "Groups",
+        "corHex": "#7C3AED",
+        "tendencia": [8, 11, 9, 14, 12, 17, 15, 21, 18, 16]
+      },
+      {
+        "titulo": "Novos Clientes",
+        "valor": "384",
+        "variacao": "+16,6%",
+        "positivo": true,
+        "icone": "PeopleAlt",
+        "corHex": "#3B82F6",
+        "tendencia": [6, 9, 8, 12, 14, 13, 17, 16, 19, 18]
+      },
+      {
+        "titulo": "Projetos Ativos",
+        "valor": "27",
+        "variacao": "-2,4%",
+        "positivo": false,
+        "icone": "Folder",
+        "corHex": "#F97316",
+        "tendencia": [12, 15, 19, 16, 18, 15, 17, 14, 15, 12]
+      }
+    ],
+    "Últimos 90 dias": [
+      {
+        "titulo": "Receita",
+        "valor": "R$ 745.500",
+        "variacao": "+37,5%",
+        "positivo": true,
+        "icone": "AttachMoney",
+        "corHex": "#10B981",
+        "tendencia": [20, 28, 24, 36, 32, 24, 38, 48, 46, 48]
+      },
+      {
+        "titulo": "Usuários Ativos",
+        "valor": "38.526",
+        "variacao": "+24,6%",
+        "positivo": true,
+        "icone": "Groups",
+        "corHex": "#7C3AED",
+        "tendencia": [16, 22, 18, 24, 26, 34, 30, 42, 36, 32]
+      },
+      {
+        "titulo": "Novos Clientes",
+        "valor": "1.152",
+        "variacao": "+49,8%",
+        "positivo": true,
+        "icone": "PeopleAlt",
+        "corHex": "#3B82F6",
+        "tendencia": [12, 18, 16, 24, 28, 26, 34, 32, 38, 36]
+      },
+      {
+        "titulo": "Projetos Ativos",
+        "valor": "81",
+        "variacao": "+2,4%",
+        "positivo": true,
+        "icone": "Folder",
+        "corHex": "#F97316",
+        "tendencia": [24, 31, 40, 30, 35, 33, 35, 26, 25, 29]
+      }
+    ]
+  },
+  "meses": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set"],
+  "receitaMensal": [70000, 117000, 112000, 135000, 165000, 168000, 182000, 212000, 248500],
+  "metaMensal": [25000, 45000, 52000, 68000, 95000, 97000, 118000, 152000, 185000],
+  "totalClientes": 1842,
+  "segmentosClientes": [
+    { "nome": "Empresas", "percentual": 42, "corHex": "#de3162" },
+    { "nome": "Business", "percentual": 31, "corHex": "#7C3AED" },
+    { "nome": "Startup", "percentual": 18, "corHex": "#10B981" },
+    { "nome": "Outros", "percentual": 9, "corHex": "#F97316" }
+  ],
+  "performance": [
+    { "nome": "Website Corporativo", "icone": "DesktopWindows", "percentual": 83, "tarefasConcluidas": 34, "tarefasTotal": 41, "corHex": "#de3162" },
+    { "nome": "App Mobile", "icone": "PhoneIphone", "percentual": 68, "tarefasConcluidas": 27, "tarefasTotal": 41, "corHex": "#7C3AED" },
+    { "nome": "Migração Cloud", "icone": "Cloud", "percentual": 92, "tarefasConcluidas": 46, "tarefasTotal": 50, "corHex": "#10B981" },
+    { "nome": "Sistema ERP", "icone": "Storage", "percentual": 54, "tarefasConcluidas": 27, "tarefasTotal": 50, "corHex": "#F97316" }
+  ],
+  "atividades": [
+    { "nome": "Mariana Souza", "acao": "adicionou um novo cliente", "tempo": "há 5 minutos", "icone": "ArrowUpward", "corHex": "#de3162" },
+    { "nome": "Carlos Lima", "acao": "finalizou a revisão Website Corporativo", "tempo": "há 18 minutos", "icone": "Check", "corHex": "#10B981" },
+    { "nome": "Ana Martins", "acao": "publicou um novo relatório", "tempo": "há 45 minutos", "icone": "Description", "corHex": "#7C3AED" },
+    { "nome": "João Silva", "acao": "atualizou as permissões do sistema", "tempo": "há 1 hora", "icone": "Settings", "corHex": "#F97316" }
+  ],
+  "projetosRecentes": [
+    { "nome": "Portal Institucional", "icone": "DesktopWindows", "cliente": "TechCorp", "responsavel": "Mariana Souza", "status": "Em andamento", "progresso": 67, "prazo": "31 Out", "corHex": "#de3162" },
+    { "nome": "Aplicativo Mobile", "icone": "PhoneIphone", "cliente": "Nova Digital", "responsavel": "Carlos Lima", "status": "Em revisão", "progresso": 50, "prazo": "07 Nov", "corHex": "#7C3AED" },
+    { "nome": "Migração Cloud", "icone": "Cloud", "cliente": "CloudSystems", "responsavel": "Ana Martins", "status": "Concluído", "progresso": 100, "prazo": "20 Set", "corHex": "#10B981" },
+    { "nome": "Sistema ERP", "icone": "Storage", "cliente": "Alpha Group", "responsavel": "João Silva", "status": "Em andamento", "progresso": 48, "prazo": "15 Out", "corHex": "#F97316" }
+  ]
+}

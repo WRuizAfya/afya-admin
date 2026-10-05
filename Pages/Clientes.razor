@@ -2,16 +2,15 @@
 
 <PageTitle>Clientes | Afya Pedagógico</PageTitle>
 
-<CabecalhoPagina Titulo="Clientes" Subtitulo="Área de Gerenciamento de Clientes.">
+<CabecalhoPagina Titulo="Clientes" Subtitulo="Área de Gerenciamento de Clientes." @bind-Periodo="_periodo" @bind-Periodo:after="AtualizarDashboard">
 	<Acoes>
-		<SeletorPeriodo Opcoes="DashboardData.Periodos" @bind-Valor="_classificar" />
 		<MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" StartIcon="@Icons.Material.Filled.Add">Novo Cliente</MudButton>
 	</Acoes>
 </CabecalhoPagina>
 
 
 <MudGrid Spacing="3">
-	@foreach (var kpi in DashboardData.Kpis)
+	@foreach (var kpi in _kpis)
 	{
 		<MudItem xs="12" sm="6" lg="3">
 			<KpiCard Kpi="kpi" />
@@ -21,5 +20,17 @@
 </MudGrid>
 
 @code {
-	private string _classificar = "Ordem Alfabetica (Ascendente)";
+	private string _periodo = "Últimos 30 dias";
+	
+	private List<Kpi> _kpis = new();
+	
+	protected override void OnInitialized()
+    {
+        AtualizarDashboard();
+    }
+
+    private void AtualizarDashboard()
+    {
+        _kpis = DashboardData.ObterKpisPorPeriodo(_periodo);
+    }
 }

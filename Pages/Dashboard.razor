@@ -2,15 +2,14 @@
 
 <PageTitle>Dashboard | Afya Pedagógico</PageTitle>
 
-<CabecalhoPagina Titulo="Dashboard" Subtitulo="Visão geral da plataforma e indicadores de desempenho.">
+<CabecalhoPagina Titulo="Dashboard" Subtitulo="Visão geral da plataforma e indicadores de desempenho." @bind-Periodo="_periodo">
 	<Acoes>
-		<SeletorPeriodo Opcoes="DashboardData.Periodos" @bind-Valor="_periodo" />
 		<MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" StartIcon="@Icons.Material.Filled.Add">Novo Projeto</MudButton>
 	</Acoes>
 </CabecalhoPagina>
 
 <MudGrid Spacing="3">
-	@foreach (var kpi in DashboardData.Kpis)
+	@foreach (var kpi in _kpis)
 	{
 		<MudItem xs="12" sm="6" lg="3">
 			<KpiCard Kpi="kpi" />
@@ -39,7 +38,18 @@
 
 </MudGrid>
 
-
 @code {
 	private string _periodo = "Últimos 30 dias";
+	
+	private List<Kpi> _kpis = new();
+	
+	protected override void OnInitialized()
+    {
+        AtualizarDashboard();
+    }
+
+    private void AtualizarDashboard()
+    {
+        _kpis = DashboardData.ObterKpisPorPeriodo(_periodo);
+    }
 }
