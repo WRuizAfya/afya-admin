@@ -40,7 +40,7 @@
 	private static readonly System.Globalization.CultureInfo CulturaBr = new("pt-BR");
 
 	[Parameter, EditorRequired] public int Total { get; set; }
-	[Parameter, EditorRequired] public IReadOnlyList<SegmentoCliente> Segmentos { get; set; } = Array.Empty<SegmentoCliente>();
+	[Parameter, EditorRequired] public IReadOnlyList<SegmentoClienteDto> Segmentos { get; set; } = Array.Empty<SegmentoClienteDto>();
 
 	private List<ChartSeries<double>> _series = new();
 	private string[] _rotulos = Array.Empty<string>();

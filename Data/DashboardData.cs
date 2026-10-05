@@ -1,4 +1,4 @@
-using MudBlazor;
+/* using MudBlazor;
 
 namespace afya_admin.Data;
 
@@ -83,3 +83,5 @@ public static class DashboardData
 			new("Sistema ERP", Icons.Material.Outlined.Storage, Color.Warning, "Alpha Group", "João Silva", "Em andamento", Color.Info, 48, "15 Out")
 		};
 }
+
+*/

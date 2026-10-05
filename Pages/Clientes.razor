@@ -20,17 +20,30 @@
 </MudGrid>
 
 @code {
+	private DashboardDto? _dashboardData;
 	private string _periodo = "Últimos 30 dias";
 	
-	private List<Kpi> _kpis = new();
+	private List<KpiDto> _kpis= new();
 	
-	protected override void OnInitialized()
+   protected override async Task OnInitializedAsync()
     {
-        AtualizarDashboard();
-    }
+        try
+        {
+            _dashboardData = await Http.GetFromJsonAsync<DashboardDto>("data/dashboard.json");
+            AtualizarDashboard();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar o JSON: {ex.Message}");
+        }
+	
+	}
 
     private void AtualizarDashboard()
     {
-        _kpis = DashboardData.ObterKpisPorPeriodo(_periodo);
+        if (_dashboardData != null && _dashboardData.KpisPorPeriodo.TryGetValue(_periodo, out var kpisEncontrados) )
+        {
+            _kpis = kpisEncontrados;
+        }
     }
 }

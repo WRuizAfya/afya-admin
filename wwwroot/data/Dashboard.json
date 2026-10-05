@@ -12,7 +12,7 @@
         "valor": "R$ 82.833",
         "variacao": "+4,1%",
         "positivo": true,
-        "icone": "AttachMoney",
+        "icone": "Icons.Material.Filled.AttachMoney",
         "corHex": "#10B981",
         "tendencia": [3, 6, 5, 9, 8, 11, 9, 12, 11, 15]
       },
@@ -21,7 +21,7 @@
         "valor": "4.280",
         "variacao": "+2,7%",
         "positivo": true,
-        "icone": "Groups",
+        "icone": "Icons.Material.Filled.Groups",
         "corHex": "#7C3AED",
         "tendencia": [2, 5, 6, 8, 7, 9, 8, 10, 9, 8]
       },
@@ -30,7 +30,7 @@
         "valor": "128",
         "variacao": "+5,53%",
         "positivo": true,
-        "icone": "PeopleAlt",
+        "icone": "Icons.Material.Filled.PeopleAlt",
         "corHex": "#3B82F6",
         "tendencia": [2, 3, 4, 6, 7, 7, 8, 8, 9, 9]
       },
@@ -39,7 +39,7 @@
         "valor": "9",
         "variacao": "-0,8%",
         "positivo": false,
-        "icone": "Folder",
+        "icone": "Icons.Material.Filled.Folder",
         "corHex": "#F97316",
         "tendencia": [6, 7, 9, 8, 9, 8, 9, 7, 8, 7]
       }
@@ -50,7 +50,7 @@
         "valor": "R$ 248.500",
         "variacao": "+12,5%",
         "positivo": true,
-        "icone": "AttachMoney",
+        "icone": "Icons.Material.Filled.AttachMoney",
         "corHex": "#10B981",
         "tendencia": [10, 14, 12, 18, 16, 21, 19, 24, 23, 29]
       },
@@ -59,7 +59,7 @@
         "valor": "12.842",
         "variacao": "+8,2%",
         "positivo": true,
-        "icone": "Groups",
+        "icone": "Icons.Material.Filled.Groups",
         "corHex": "#7C3AED",
         "tendencia": [8, 11, 9, 14, 12, 17, 15, 21, 18, 16]
       },
@@ -68,7 +68,7 @@
         "valor": "384",
         "variacao": "+16,6%",
         "positivo": true,
-        "icone": "PeopleAlt",
+        "icone": "Icons.Material.Filled.PeopleAlt",
         "corHex": "#3B82F6",
         "tendencia": [6, 9, 8, 12, 14, 13, 17, 16, 19, 18]
       },
@@ -77,7 +77,7 @@
         "valor": "27",
         "variacao": "-2,4%",
         "positivo": false,
-        "icone": "Folder",
+        "icone": "Icons.Material.Filled.Folder",
         "corHex": "#F97316",
         "tendencia": [12, 15, 19, 16, 18, 15, 17, 14, 15, 12]
       }
@@ -88,7 +88,7 @@
         "valor": "R$ 745.500",
         "variacao": "+37,5%",
         "positivo": true,
-        "icone": "AttachMoney",
+        "icone": "Icons.Material.Filled.AttachMoney",
         "corHex": "#10B981",
         "tendencia": [20, 28, 24, 36, 32, 24, 38, 48, 46, 48]
       },
@@ -97,7 +97,7 @@
         "valor": "38.526",
         "variacao": "+24,6%",
         "positivo": true,
-        "icone": "Groups",
+        "icone": "Icons.Material.Filled.Groups",
         "corHex": "#7C3AED",
         "tendencia": [16, 22, 18, 24, 26, 34, 30, 42, 36, 32]
       },
@@ -106,7 +106,7 @@
         "valor": "1.152",
         "variacao": "+49,8%",
         "positivo": true,
-        "icone": "PeopleAlt",
+        "icone": "Icons.Material.Filled.PeopleAlt",
         "corHex": "#3B82F6",
         "tendencia": [12, 18, 16, 24, 28, 26, 34, 32, 38, 36]
       },
@@ -115,7 +115,7 @@
         "valor": "81",
         "variacao": "+2,4%",
         "positivo": true,
-        "icone": "Folder",
+        "icone": "Icons.Material.Filled.Folder",
         "corHex": "#F97316",
         "tendencia": [24, 31, 40, 30, 35, 33, 35, 26, 25, 29]
       }

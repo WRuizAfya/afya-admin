@@ -9,7 +9,7 @@
 	<MudStack Row="true" Spacing="3" AlignItems="AlignItems.Center">
 		@if (ExibirSeletorPeriodo)
 		{
-			<SeletorPeriodo Opcoes="DashboardData.Periodos" Valor="@Periodo" ValorChanged="AtualizarPeriodo" />
+			<SeletorPeriodo Opcoes="_dashboardData?.Periodos" Valor="@Periodo" ValorChanged="AtualizarPeriodo" />
 		}
 		
 		@Acoes
@@ -17,6 +17,7 @@
 </MudStack>
 
 @code {
+	private DashboardDto? _dashboardData;
 	[Parameter, EditorRequired] public string Titulo { get; set; } = "";
 	[Parameter] public string? Subtitulo { get; set; }
 	[Parameter] public RenderFragment? Acoes { get; set; }
@@ -30,5 +31,17 @@
 	{
 		Periodo = novoPeriodo;
 		await PeriodoChanged.InvokeAsync(novoPeriodo);
+	}
+	
+	 protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _dashboardData = await Http.GetFromJsonAsync<DashboardDto>("data/dashboard.json");   
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar o JSON: {ex.Message}");
+        }
 	}
 }

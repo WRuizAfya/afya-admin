@@ -11,7 +11,7 @@
 	<MudStack Row="true" Justify="Justify.SpaceBetween" AlignItems="AlignItems.End" Class="mt-2">
 		<div>
 			<MudStack Row="true" Spacing="1" AlignItems="AlignItems.Center">
-				<MudIcon Icon="@(Kpi.Positivo ? Icons.Material.Filled.TrendingUp : Icons.Material.Filled.TrendingDown)"Color="@CorTendencia" Size="Size.Small" />
+				<MudIcon Icon="@(Kpi.Positivo ? Icons.Material.Filled.TrendingUp : Icons.Material.Filled.TrendingDown)" Color="@CorTendencia" Size="Size.Small" />
 				<MudText Typo="Typo.h6" Color="@CorTendencia">@Kpi.Variacao</MudText>
 			</MudStack>
 			<MudText Typo="Typo.caption" Class="mud-text-secondary">comparado ao mês anterior.</MudText>
@@ -20,38 +20,34 @@
 	</MudStack>
 </MudPaper>
 
-@code
-{
+@code {
+    [Parameter, EditorRequired] public KpiDto Kpi { get; set; } = default!;
 
-[Parameter, EditorRequired] public Kpi Kpi { get; set; } = default!;
+    private List<ChartSeries<double>> _series = new();
+    private string[] _rotulos = Array.Empty<string>();
+    private LineChartOptions _opcoes = new();
 
-private List<ChartSeries<double>> _series = new();
+    private Color CorTendencia => Kpi.Positivo ? Color.Success : Color.Error;
 
-private string[] _rotulos = Array.Empty<string>();
-
-private LineChartOptions _opcoes = new();
-
-private Color CorTendencia => Kpi.Positivo ? Color.Success : Color.Error;
-
-protected override void OnParametersSet()
-	{
-		var serie = new ChartSeries<double> { Name = Kpi.Titulo, Data = Kpi.Tendencia };
-		_series = new() { serie };
-		_rotulos = Enumerable.Repeat("", Kpi.Tendencia.Length).ToArray();
-		_opcoes = new LineChartOptions
-		{
-			ChartPalette = new[] { Kpi.CorHex },
-			ShowLegend = false,
-			ShowToolTips = false,
-			YAxisLines = false,
-			XAxisLines = false,
-			YAxisToStringFunc = _ => "",
-			YAxisRequireZeroPoint = false,
-			LineStrokeWidth = 12,
-			SeriesDisplayOverrides = new Dictionary<IChartSeries, MudBlazor.Charts.SeriesDisplayOverride>
-			{
-				[serie] = new() { LineDisplayType = LineDisplayType.Area, FillOpacity = 0.15, StrokeOpacity = 1 },
-			},
-		};
-	}
+    protected override void OnParametersSet()
+    {
+        var serie = new ChartSeries<double> { Name = Kpi.Titulo, Data = Kpi.Tendencia };
+        _series = new() { serie };
+        _rotulos = Enumerable.Repeat("", Kpi.Tendencia.Length).ToArray();
+        _opcoes = new LineChartOptions
+        {
+            ChartPalette = new[] { Kpi.CorHex },
+            ShowLegend = false,
+            ShowToolTips = false,
+            YAxisLines = false,
+            XAxisLines = false,
+            YAxisToStringFunc = _ => "",
+            YAxisRequireZeroPoint = false,
+            LineStrokeWidth = 12,
+            SeriesDisplayOverrides = new Dictionary<IChartSeries, MudBlazor.Charts.SeriesDisplayOverride>
+            {
+                [serie] = new() { LineDisplayType = LineDisplayType.Area, FillOpacity = 0.15, StrokeOpacity = 1 },
+            },
+        };
+    }
 }

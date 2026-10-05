@@ -30,7 +30,7 @@
 					</MudStack>
 				</MudTd>
 				<MudTd DataLabel="Status">
-					<MudChip T="string" Size="Size.Small" Variant="Variant.Text" Color="@context.StatusCor">@context.Status</MudChip>
+					<MudChip T="string" Size="Size.Small" Variant="Variant.Text" Color="@context.Cor">@context.Status</MudChip>
 				</MudTd>
 				<MudTd DataLabel="Progresso">
 					<MudGrid Spacing="1" Class="align-center">
@@ -57,5 +57,5 @@
 
 @code
 {
-	[Parameter, EditorRequired] public IReadOnlyList<ProjetoRecente> Projetos { get; set; } = Array.Empty<ProjetoRecente>();
+	[Parameter, EditorRequired] public IReadOnlyList<ProjetoRecenteDto> Projetos { get; set; } = Array.Empty<ProjetoRecenteDto>();
 }

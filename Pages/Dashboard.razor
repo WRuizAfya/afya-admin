@@ -1,15 +1,16 @@
 @page "/"
 
+
 <PageTitle>Dashboard | Afya Pedagógico</PageTitle>
 
-<CabecalhoPagina Titulo="Dashboard" Subtitulo="Visão geral da plataforma e indicadores de desempenho." @bind-Periodo="_periodo">
+<CabecalhoPagina Titulo="Dashboard" Subtitulo="Visão geral da plataforma e indicadores de desempenho." @bind-Periodo="_periodo" @bind-Periodo:after="AtualizarKpis">
 	<Acoes>
 		<MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" StartIcon="@Icons.Material.Filled.Add">Novo Projeto</MudButton>
 	</Acoes>
 </CabecalhoPagina>
 
 <MudGrid Spacing="3">
-	@foreach (var kpi in _kpis)
+	@foreach (var kpi in _kpisAtuais)
 	{
 		<MudItem xs="12" sm="6" lg="3">
 			<KpiCard Kpi="kpi" />
@@ -17,39 +18,62 @@
 	}
 	
 	<MudItem xs="12" lg="7">
-		<GraficoReceita Meses="DashboardData.Meses" Receita="DashboardData.ReceitaMensal" Meta="DashboardData.MetaMensal" />
+		<GraficoReceita Meses="_dashboardData?.Meses" Receita="_dashboardData?.ReceitaMensal" Meta="_dashboardData?.MetaMensal" />
 	</MudItem>
 	
 	<MudItem xs="12" lg="5">
-		<GraficoDistribuicaoClientes Total="DashboardData.TotalClientes" Segmentos="DashboardData.SegmentosClientes" />
+		<GraficoDistribuicaoClientes Total="_dashboardData.TotalClientes" Segmentos="_dashboardData?.SegmentosClientes" />
 	</MudItem>
 
 	<MudItem xs="12" lg="7">
-		<PerformanceProjetos Projetos="DashboardData.Performance" />
+		<PerformanceProjetos Projetos="_dashboardData?.Performance" />
 	</MudItem>
 
 	<MudItem xs="12" lg="5">
-		<AtividadesRecentes Atividades="DashboardData.Atividades" />
+		<AtividadesRecentes Atividades="_dashboardData?.Atividades" />
 	</MudItem>
 
 	<MudItem xs="12">
-		<ProjetosRecentes Projetos="DashboardData.ProjetosRecentes" />
+		<ProjetosRecentes Projetos="_dashboardData?.ProjetosRecentes" />
 	</MudItem>
 
 </MudGrid>
 
 @code {
 	private string _periodo = "Últimos 30 dias";
+	private DashboardDto? _dashboardData;
 	
-	private List<Kpi> _kpis = new();
+	private List<KpiDto> _kpisAtuais = new();
 	
-	protected override void OnInitialized()
-    {
-        AtualizarDashboard();
-    }
+	private bool _isLoading = true;
 
-    private void AtualizarDashboard()
+    protected override async Task OnInitializedAsync()
     {
-        _kpis = DashboardData.ObterKpisPorPeriodo(_periodo);
+        try
+        {
+            _isLoading = true;
+            _dashboardData = await Http.GetFromJsonAsync<DashboardDto>("data/dashboard.json");
+            AtualizarKpis();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar o JSON: {ex.Message}");
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+	
+	private void AtualizarKpis()
+    {
+        if (_dashboardData != null && _dashboardData.KpisPorPeriodo.TryGetValue(_periodo, out var kpisEncontrados))
+        {
+            _kpisAtuais = kpisEncontrados;
+        }
+        else
+        {
+            _kpisAtuais = new List<KpiDto>();
+        }
     }
 }
