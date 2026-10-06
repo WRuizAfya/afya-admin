@@ -14,13 +14,18 @@
 
 ## Objetivo do projeto
 
-Explique com suas palavras o objetivo do projeto e o que a página faz (2 a 4 parágrafos).
+O **Afya Admin** é um painel de gestão contemporâneo e completamente responsivo, criado para centralizar a monitorização de indicadores de desempenho, receitas, estados de projetos e atividades recentes em uma organização acadêmica ou empresarial. A aplicação replica um ambiente corporativo autêntico, oferecendo uma interface clara, intuitiva e interativa para que gestores e administradores possam observar métricas relevantes em tempo real.
+
+A tela inicial funciona como um *dashboard* executivo de alto nível. Nela, o usuário tem a possibilidade de alterar o período de análise, visualizar cartões com indicadores-chave de desempenho (KPIs) que incluem mini gráficos de tendência (*sparklines*), comparar mensalmente a receita obtida com a meta definida, conferir a distribuição percentual de clientes por segmento através de um gráfico de rosca e ainda acompanhar o progresso detalhado de projetos, além de um feed dinâmico de atividades mais recentes.
+
+Toda a experiência foi desenvolvida com foco na usabilidade e na acessibilidade visual, oferecendo suporte nativo tanto para temas claro quanto escuro, além de uma adaptação fluida para dispositivos móveis, assegurando que o painel possa ser acessado sem dificuldades em smartphones, tablets e computadores de mesa.
 
 ## Tecnologias utilizadas
 
 - .NET 10 / Blazor WebAssembly
 - MudBlazor 9
-- (outras que você usou)
+- GitHub
+- NotePad++
 
 ## Como executar
 
@@ -32,7 +37,7 @@ cd afya-admin
 dotnet watch
 ```
 
-Informe também a versão do .NET SDK necessária.
+Necessita .Net 10.0
 
 ## Telas
 
@@ -52,8 +57,48 @@ Explique em poucas linhas o que o print do DevTools mostra: qual componente voc�
 
 ## Estrutura do projeto
 
-Mostre a árvore de pastas e arquivos e explique em uma linha o papel de cada pasta (`Components`, `Data`, `Layout`, `Pages`, `wwwroot`).
-
+`
+|-Components
+||-AtividadesRecentes.razor
+||-CabecalhoPagina.razor
+||-DashboardCard.Razor
+||-GraficoDistribuicaoClientes.razor
+||-GraficoReceita.razor
+||-KpiCard.razor
+||-PerformanceProjetos.razor
+||-ProjetosRecentes.razor
+||-SeletorPeriodo.razor
+||-Ui.cs
+|-Data
+||-DashboardData.cs
+|-Layout
+||-MainLayout.razor
+||-NavMenu.razor
+|-Pages
+||-Clientes.razor
+||-Dashboard.razor
+||-NotFound.razor
+|-Properties
+||-launchSettings.json
+|-docs/prints
+||-devtools.png
+||-mobile.png
+||-tema-claro.png
+||-tema-escuro.png
+|-wwwroot
+||-css
+||-data
+||-img
+||-icon-192.png
+||-index.html
+|.gitattributes
+|.gitignore
+|App.razor
+|Program.cs
+|README.md
+|_Imports.razor
+|afya-admin.csproj
+`
 ## Componentes criados
 
 | Componente | Responsabilidade | Parâmetros que recebe |
@@ -100,8 +145,14 @@ Responda **com suas próprias palavras** (um parágrafo curto por pergunta):
 
 Descreva pelo menos **dois problemas** que você enfrentou durante o desenvolvimento e como resolveu cada um.
 
-1. Organização e Formatação de codigo devido ao programa que estava usando
+1. Organização e Formatação de código devido ao programa que estava usando
 
-## Melhorias futuras (opcional)
+Problema: No início, algumas ferramentas de edição utilizadas apresentavam desalinhamento de indentação e pequenas inconsistências na formatação das tags Razor e blocos @code, o que gerava alertas de compilação ou dificuldade de leitura visual.
 
-O que você implementaria a seguir? Se fez algum dos desafios da seção 20 do tutorial, descreva aqui.
+Solução: Padronizei o ambiente utilizando extensões oficiais de formatação para C# e Razor, além de configurar atalhos automáticos de salvamento para aplicar o padrão de identação do SDK do .NET.
+
+2. Ajuste de responsividade e quebra de elementos gráficos complexos no modo mobile
+
+Problema: Alguns gráficos e tabelas maiores apresentavam sobreposição de texto ou estouravam as margens laterais quando visualizados em telas de smartphones muito estreitas.
+
+Solução: Utilizei as propriedades nativas de responsividade do MudBlazor e classes utilitárias de visibilidade (como Hidden para ocultar colunas secundárias em dispositivos móveis) e envolvi os componentes em contêineres com rolagem horizontal controlada quando necessário.
