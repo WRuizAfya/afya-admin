@@ -2,7 +2,7 @@
 
 <PageTitle>Dashboard | Afya Pedagógico</PageTitle>
 
-<CabecalhoPagina Titulo="Dashboard" Subtitulo="Visão geral da plataforma e indicadores de desempenho." @bind-Periodo="_periodo">
+<CabecalhoPagina Titulo="Dashboard" Subtitulo="Visão geral da plataforma e indicadores de desempenho." @bind-Periodo="_periodo" @bind-Periodo:after="AtualizarDashboard">
 	<Acoes>
 		<MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large" StartIcon="@Icons.Material.Filled.Add">Novo Projeto</MudButton>
 	</Acoes>
