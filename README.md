@@ -99,6 +99,7 @@ Explique em poucas linhas o que o print do DevTools mostra: qual componente voc�
 ├── README.md
 ├── _Imports.razor
 └── afya-admin.csproj
+```
 
 ## Componentes criados
 
