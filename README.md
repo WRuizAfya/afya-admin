@@ -91,7 +91,8 @@ Explique em poucas linhas o que o print do DevTools mostra: qual componente voc�
 │   ├── css/
 │   ├── data/
 │   ├── img/
-│   └── icon-192.png
+│   ├── icon-192.png
+│   └── index.html
 ├── .gitattributes
 ├── .gitignore
 ├── App.razor
