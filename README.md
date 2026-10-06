@@ -57,48 +57,49 @@ Explique em poucas linhas o que o print do DevTools mostra: qual componente voc�
 
 ## Estrutura do projeto
 
-`
-|-Components.
-||-AtividadesRecentes.razor.
-||-CabecalhoPagina.razor.
-||-DashboardCard.Razor.
-||-GraficoDistribuicaoClientes.razor.
-||-GraficoReceita.razor.
-||-KpiCard.razor.
-||-PerformanceProjetos.razor.
-||-ProjetosRecentes.razor.
-||-SeletorPeriodo.razor.
-||-Ui.cs.
-|-Data.
-||-DashboardData.cs.
-|-Layout.
-||-MainLayout.razor.
-||-NavMenu.razor.
-|-Pages.
-||-Clientes.razor.
-||-Dashboard.razor.
-||-NotFound.razor.
-|-Properties.
-||-launchSettings.json.
-|-docs/prints.
-||-devtools.png.
-||-mobile.png.
-||-tema-claro.png.
-||-tema-escuro.png.
-|-wwwroot.
-||-css.
-||-data.
-||-img.
-||-icon-192.png.
-||-index.html.
-|.gitattributes.
-|.gitignore.
-|App.razor.
-|Program.cs.
-|README.md.
-|_Imports.razor.
-|afya-admin.csproj.
-`
+```
+.
+├── Components/
+│   ├── AtividadesRecentes.razor
+│   ├── CabecalhoPagina.razor
+│   ├── DashboardCard.razor
+│   ├── GraficoDistribuicaoClientes.razor
+│   ├── GraficoReceita.razor
+│   ├── KpiCard.razor
+│   ├── PerformanceProjetos.razor
+│   ├── ProjetosRecentes.razor
+│   ├── SeletorPeriodo.razor
+│   └── Ui.cs
+├── Data/
+│   └── DashboardData.cs
+├── Layout/
+│   ├── MainLayout.razor
+│   └── NavMenu.razor
+├── Pages/
+│   ├── Clientes.razor
+│   ├── Dashboard.razor
+│   └── NotFound.razor
+├── Properties/
+│   └── launchSettings.json
+├── docs/
+│   └── prints/
+│       ├── devtools.png
+│       ├── mobile.png
+│       ├── tema-claro.png
+│       └── tema-escuro.png
+├── wwwroot/
+│   ├── css/
+│   ├── data/
+│   ├── img/
+│   └── icon-192.png
+├── .gitattributes
+├── .gitignore
+├── App.razor
+├── Program.cs
+├── README.md
+├── _Imports.razor
+└── afya-admin.csproj
+
 ## Componentes criados
 
 | Componente | Responsabilidade | Parâmetros que recebe |
